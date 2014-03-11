@@ -23,8 +23,8 @@ No FAQ
 
 == Screenshots ==
 
-1. screenshot-1.JPG
-2. screenshot-2.JPG
+1. Desktop
+2. Responsive
 
 == Changelog ==
 No changes
