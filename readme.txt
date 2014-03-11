@@ -23,8 +23,8 @@ No FAQ
 
 == Screenshots ==
 
-1. screenshot-1.jpg Desktop.
-2. screenshot-2.jpg Mobile.
+1. screenshot-1.jpg
+2. screenshot-2.jpg
 
 == Changelog ==
 No changes
