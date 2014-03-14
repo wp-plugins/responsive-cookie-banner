@@ -1,7 +1,7 @@
 === Plugin Name ===
 Contributors: lewisgray200
 Donate link: www.lynda-gray.co.uk/donate.html
-Tags: responsive cookie banner, cookie banner, cookie law, cookie notice, EU cookie law,
+Tags: responsive responsive cookie banner, cookie banner, cookie law, cookie notice, EU cookie law
 Requires at least: 2.1
 Tested up to: 3.8.1
 Stable tag: 4.3
