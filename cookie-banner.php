@@ -2,7 +2,7 @@
 
 /*
 * Plugin Name: Responsive Cookie Banner
-* Version: 1.0
+* Version: 1.1
 * Author: Lewis Gray
 * Author email: limejelly386 at gmail dot com
 * License: GPL2

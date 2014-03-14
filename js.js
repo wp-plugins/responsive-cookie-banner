@@ -9,6 +9,10 @@ function setCookie(cname,cvalue,exdays){
 
 $(document).ready(function(){
 
+// Insert the banner after the opening <body> tag
+
+$('#cookie-banner').prependTo('body');
+
 // Slide the cookie banner down after one second
 
 $('#cookie-banner').delay(1000).slideDown('slow');

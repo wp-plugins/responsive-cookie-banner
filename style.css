@@ -18,15 +18,10 @@
 
 /******************* MAIN *******************/
 
-body{
-	position: relative;
-}
-
 #cookie-banner{
 	width: 100%;
-	top: 0;
 	background-color: #F7F7F7;
-	position: absolute;
+	position: relative;
 	z-index: 999999;
 	display: none;
 	font-family: 'Open Sans';
