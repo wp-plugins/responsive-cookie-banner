@@ -14,6 +14,14 @@ A simple, stylish and responsive EU cookie banner plugin that will display a mes
 
 A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. The message and 'more info' link destination can be changed in the settings menu. Compatible with all devices and browsers.  
 
+**Key Features**
+
+* Fully responsive
+* Clean and modern design
+* 'more info' link destination can be changed in the settings menu
+* The message can be changed in the settings menu
+* Once 'Accept' has been clicked the banner will not show again
+
 == Installation ==
 
 1. Upload the cookie-banner folder` to the `/wp-content/plugins/` directory
