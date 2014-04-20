@@ -28,8 +28,10 @@ No FAQ
 2. Responsive
 
 == Changelog ==
-Version 1.1 - making the banner relative position not absolute. 
-Version 1.2 - making all text updatable so it can easily be used with different languages. 
+<ul>
+<li>Version 1.1 - making the banner relative position not absolute.</li>
+<li>Version 1.2 - making all text updatable so it can easily be used with different languages.</li>
+</ul>
 
 == Upgrade Notice ==
 No upgrades
