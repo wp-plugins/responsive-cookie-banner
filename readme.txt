@@ -12,13 +12,11 @@ A simple, stylish and responsive cookie banner plugin.
 
 == Description ==
 
-<p style="margin-bottom:0;"><strong>Key Features</strong></p>
-
 <ul>
 <li>fully responsive</li>
 <li>multi-language compatibility</li>
 <li>clean and modern design</li>
-<li>all text and the the ‘more info’ link destination can be changed in the settings menu</li>
+<li>all text and the ‘more info’ link destination can be changed in the settings menu</li>
 </ul>
 
 == Installation ==
