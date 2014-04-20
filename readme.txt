@@ -12,7 +12,14 @@ A simple, stylish and responsive cookie banner plugin.
 
 == Description ==
 
-A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices, languages and browsers.
+<strong>Key Features</strong>
+
+<ul>
+<li>fully responsive</li>
+<li>multi-language compatibility</li>
+<li>clean and modern design</li>
+<li>all text and the the ‘more info’ link destination can be changed in the settings menu</li>
+</ul>
 
 == Installation ==
 
@@ -29,8 +36,8 @@ No FAQ
 
 == Changelog ==
 <ul>
-<li>Version 1.1 - making the banner relative position not absolute.</li>
-<li>Version 1.2 - making all text updatable so it can easily be used with different languages.</li>
+<li><strong>Version 1.1</strong> - making the banner relative position not absolute.</li>
+<li><strong>Version 1.2</strong> - making all text updatable so it can easily be used with different languages.</li>
 </ul>
 
 == Upgrade Notice ==
