@@ -12,7 +12,7 @@ A simple, stylish and responsive cookie banner plugin.
 
 == Description ==
 
-<strong>Key Features</strong>
+<p style="margin-bottom:0;"><strong>Key Features</strong></p>
 
 <ul>
 <li>fully responsive</li>
