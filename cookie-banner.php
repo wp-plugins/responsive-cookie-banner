@@ -2,11 +2,11 @@
 
 /*
 * Plugin Name: Responsive Cookie Banner
-* Version: 1.1
+* Version: 1.2
 * Author: Lewis Gray
 * Author email: limejelly386 at gmail dot com
 * License: GPL2
-* Description: A simple, stylish responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. The message and 'more info' link destination can be changed in the settings menu. Compatible with all devices and browsers.
+* Description: A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices and browsers.
 */
 
 function loadJquery(){
@@ -44,8 +44,8 @@ function checkCookie(){
 		</div>
 
 		<div class="right">
-			<p><input class="accept" name="accept" type="submit" value="ACCEPT" />
-				<a class="more-info" target="BLANK" href="<?php echo get_option('cookie_banner_more_info'); ?>" name="more-info" value="MORE INFO">MORE INFO</a>
+			<p><input class="accept" name="accept" type="submit" value="<?php echo get_option('cookie_banner_accept_button_text', 'ACCEPT'); ?>" />
+				<a class="more-info" target="BLANK" href="<?php echo get_option('cookie_banner_more_info'); ?>" name="more-info" ><?php echo get_option('cookie_banner_more_info_text', 'MORE INFO'); ?></a>
 			</p>
 		</div>
 
@@ -76,6 +76,8 @@ function cookie_banner_menu() {
 function register_cookie_banner_settings() {
 // Add options into the settings page
 	register_setting( 'cookie-banner-group', 'cookie_banner_text' );
+	register_setting( 'cookie-banner-group', 'cookie_banner_accept_button_text' ); 
+	register_setting( 'cookie-banner-group', 'cookie_banner_more_info_text' );  
 	register_setting( 'cookie-banner-group', 'cookie_banner_more_info' );  
 }
 
@@ -91,7 +93,11 @@ function cookie_banner_admin_page() {
 			<?php settings_fields( 'cookie-banner-group' ); ?>
 			<?php do_settings_sections( 'cookie-banner-group' ); ?>
 
-			<p>Message text: <textarea style="display:block;" name="cookie_banner_text" id="cookie_banner_text" cols="30" rows="10"><?php echo get_option("cookie_banner_text"); ?></textarea></p>
+			<p>Message text: <textarea style="display:block;" name="cookie_banner_text" id="cookie_banner_text" cols="30" rows="10"><?php echo get_option("cookie_banner_text", 'Our website uses cookies. By using our website and agreeing to this policy, you consent to our use of cookies.'); ?></textarea></p>
+
+			<p>'Accept' button text:<input type="text" style="width: 500px; display:block;" name="cookie_banner_accept_button_text" id="cookie_banner_accept_button_text" value="<?php echo get_option('cookie_banner_accept_button_text', 'ACCEPT'); ?>"></p>
+
+			<p>'More Info' link text:<input type="text" style="width: 500px; display:block;" name="cookie_banner_more_info_text" id="cookie_banner_more_info_text" value="<?php echo get_option('cookie_banner_more_info_text', 'MORE INFO'); ?>"></p>
 
 			<p>'More Info' link URL:<input type="text" style="width: 500px; display:block;" name="cookie_banner_more_info" id="cookie_banner_more_info" value="<?php echo get_option('cookie_banner_more_info'); ?>"></p>
 
@@ -109,6 +115,8 @@ function cookie_banner_admin_page() {
 function cookie_banner_remove() {
 // Deletes the database fields
 	delete_option('cookie_banner_text', '', 'yes');
+	delete_option('cookie_banner_accept_button_text', '', 'yes');
+	delete_option('cookie_banner_more_info_text', '', 'yes');
 	delete_option('cookie_banner_more_info', '', 'yes');
 }
 

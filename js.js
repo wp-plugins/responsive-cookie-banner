@@ -4,7 +4,7 @@ function setCookie(cname,cvalue,exdays){
 	var d = new Date();
 	d.setTime(d.getTime()+(exdays*24*60*60*1000));
 	var expires = "expires="+d.toGMTString();
-	document.cookie = cname + "=" + cvalue + "; " + expires;
+	document.cookie = cname + "=" + cvalue + "; " + expires + "domain=." + document.domain + ";path=/;";
 }
 
 $(document).ready(function(){
@@ -24,7 +24,7 @@ $('#cookie-banner .accept').click(function(){
 	$('#cookie-banner').slideUp('slow');
 })
 
-// Prepend http:// on to the link href if it doesn't already exist, this works for both http and https. 
+// Prepend http:// on to the link href if it doesn't already exist, this works for both http and https
 
 var linkHref = $('#cookie-banner .more-info').attr('href');
 

@@ -76,11 +76,13 @@
 
 #cookie-banner-container .right input[type="submit"]:hover{
 	background-color: #357AE8;
+	cursor:pointer;
 }
 
 #cookie-banner-container .right input[type="submit"]:active{
 	-mox-box-shadow: none;
 	box-shadow: none;
+	cursor:pointer;
 }
 
 #cookie-banner-container .right p a{
