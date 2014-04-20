@@ -6,7 +6,7 @@
 * Author: Lewis Gray
 * Author email: limejelly386 at gmail dot com
 * License: GPL2
-* Description: A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices and browsers.
+* Description: A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices, languages and browsers.
 */
 
 function loadJquery(){
