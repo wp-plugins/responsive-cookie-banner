@@ -8,7 +8,7 @@ Stable tag: 4.3
 License: GPL2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. 
+A simple, stylish and responsive cookie banner plugin.
 
 == Description ==
 
