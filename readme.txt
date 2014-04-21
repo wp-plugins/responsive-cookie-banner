@@ -21,10 +21,10 @@ A simple, stylish and responsive cookie banner plugin.
 </ul>
 
 == Installation ==
-
-1. Upload the cookie-banner folder` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-
+<ol>
+<li>Upload the cookie-banner folder to the `/wp-content/plugins/` directory.</li>
+<li>Activate the plugin through the 'Plugins' menu in WordPress.</li>
+</ol>
 == Frequently Asked Questions ==
 No FAQ
 
@@ -41,7 +41,3 @@ No FAQ
 
 == Upgrade Notice ==
 No upgrades
-
-== Arbitrary section ==
-
-== A brief Markdown Example ==
