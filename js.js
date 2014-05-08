@@ -30,4 +30,13 @@ var linkHref = $('#cookie-banner .more-info').attr('href');
 
 if(linkHref.indexOf('http') < 0 )
 	$('#cookie-banner .more-info').attr("href", 'http://' + linkHref );
+
+// Check if the user would like the 'more info' link in the same window
+
+var newWindowValue = $('#new_window').attr('value');
+
+if(newWindowValue == '0'){
+	$('#cookie-banner .more-info').removeAttr("target");
+}
+
 })
