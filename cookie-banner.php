@@ -9,34 +9,28 @@
 * Description: A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices, languages and browsers.
 */
 
-function loadJquery(){
-// Load Jquery
+function loadJquery()
+{
 	wp_enqueue_script('jquery');
 }
 
 add_action('init', 'loadJquery');
 
-// Register the Javascript & CSS
-wp_register_script( 'cookieBannerJs', plugins_url() . '/responsive-cookie-banner/js.js');
-wp_register_style( 'cookieBannerCss', plugins_url( '/responsive-cookie-banner/style.css' ) );
+function cookieBannerJs_load_scripts()
+{
+     wp_register_script('cookieBannerJs', plugins_url() . '/responsive-cookie-banner/js.js');
+     wp_register_style('cookieBannerCss', plugins_url( '/responsive-cookie-banner/style.css'));
+}
 
-function checkCookie(){
-
-// Check if the cookie is set
+function checkCookie()
+{
 	if(!isset($_COOKIE['cookie-law']))
-
-// If it is not set then include the banner
-		// Javascript
-		wp_enqueue_script("cookieBannerJs");
-		// CSS
-		wp_enqueue_style('cookieBannerCss');
-		//HTML
-		?>
+		add_action( 'wp_enqueue_scripts', 'cookieBannerJs_load_scripts');
+	?>
 
 <!-- Responsive Cookie Banner Wordpress plugin -->
 
 <div id="cookie-banner">
-
 	<div id="cookie-banner-container">
 		
 		<div class="left">
@@ -58,24 +52,17 @@ function checkCookie(){
 		<?php
 }
 
-// Call the function into the footer 
 add_action('wp_footer', 'checkCookie');
-
-/***************** Options Page *****************/
-
-// create custom plugin settings menu
 add_action('admin_menu', 'cookie_banner_menu');
 
-function cookie_banner_menu() {
-// Create new options menu
+function cookie_banner_menu() 
+{
 	add_options_page('Responsive Cookie Banner', 'Responsive Cookie Banner', 'administrator', __FILE__, 'cookie_banner_admin_page');
-
-// Call register settings function
 	add_action( 'admin_init', 'register_cookie_banner_settings' );
 }
 
-function register_cookie_banner_settings() {
-// Add options into the settings page
+function register_cookie_banner_settings()
+{
 	register_setting( 'cookie-banner-group', 'cookie_banner_same_window' );
 	register_setting( 'cookie-banner-group', 'cookie_banner_text' );
 	register_setting( 'cookie-banner-group', 'cookie_banner_accept_button_text' );
@@ -83,8 +70,8 @@ function register_cookie_banner_settings() {
 	register_setting( 'cookie-banner-group', 'cookie_banner_more_info' );
 }
 
-// The HTML for the settings page
-function cookie_banner_admin_page() {
+function cookie_banner_admin_page()
+{
 	?>
 	<div class="cookie-banner-options">
 
@@ -114,10 +101,8 @@ function cookie_banner_admin_page() {
 	<?php
 }
 
-/***************** Removal *****************/
-
-function cookie_banner_remove() {
-// Deletes the database fields
+function cookie_banner_remove()
+{
 	delete_option('cookie_banner_text', '', 'yes');
 	delete_option('cookie_banner_accept_button_text', '', 'yes');
 	delete_option('cookie_banner_more_info_text', '', 'yes');
@@ -125,7 +110,6 @@ function cookie_banner_remove() {
 	delete_option('same_window', '', 'yes');
 }
 
-// Run the function on uninstall
 register_uninstall_hook( __FILE__, 'cookie_banner_remove' );
 
 ?>
