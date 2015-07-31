@@ -97,6 +97,7 @@ function insertBanner()
 <?php
 }
 
+
 /**
  * Register the cookie banner settings
  *
@@ -174,6 +175,25 @@ function adminPage()
 
 	<?php
 }
+
+/**
+ * Add a settings link on the plugin page
+ *
+ */
+
+function your_plugin_settings_link($links) { 
+  $settings_link = '<a href="options-general.php?page=responsive-cookie-banner%2Frcb.php">Settings</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+}
+
+$plugin = plugin_basename(__FILE__); 
+add_filter("plugin_action_links_$plugin", 'your_plugin_settings_link' );
+
+/**
+ * Remove the banner and all options
+ *
+ */
 
 /**
  * Remove the banner and all options
