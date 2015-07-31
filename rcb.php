@@ -50,8 +50,7 @@ function checkAnchor()
  */
 
 function insertBanner()
-{	
-	$containsHttp = strpos(get_option('rcb_link'), 'http://');
+{
 	$newWindow = get_option('rcb_new_window'); 
 ?>
 
