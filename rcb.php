@@ -6,7 +6,7 @@
 * Author: Lewis Gray
 * Author email: lewisgray200 at gmail dot com
 * License: GPL2
-* Description: A simple, stylish and responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Compatible with all devices, languages and browsers.
+* Description: A simple, stylish, functional and fully responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Also includes an option to remove cookies until the banner is accepted. Compatible with all devices, languages and browsers.
 */
 
 /**
@@ -21,6 +21,30 @@ function loadResources()
     wp_enqueue_script('jquery');
     wp_enqueue_style('CbCss');
     wp_enqueue_script('CbJs');
+}
+
+/**
+ * Check if rcb_cookie is not set. If it's not delete all cookies and return false.
+ * Otherwise allow cookies and return true. 
+ *
+ */
+
+function checkCookie()
+{
+	if(get_option('rcb_check_cookie') && !isset($_COOKIE['rcb_cookie']) && !is_user_logged_in())
+	{	
+		echo 'lemon';
+		$cookies = $_COOKIE;
+		$cookiePaths = array('', '/');
+
+		foreach($cookies as $cookieName => $cookieVal)
+		{	
+			foreach($cookiePaths as $cookiePath)
+			{
+				setcookie($cookieName, '', -1, $cookiePath); 
+			}
+		}
+	}
 }
 
 /**
@@ -51,7 +75,7 @@ function checkAnchor()
 
 function insertBanner()
 {
-	$newWindow = get_option('rcb_new_window'); 
+	$newWindow = get_option('rcb_new_window');
 ?>
 
 <div id="cookie-banner">
@@ -97,7 +121,6 @@ function insertBanner()
 <?php
 }
 
-
 /**
  * Register the cookie banner settings
  *
@@ -106,6 +129,7 @@ function insertBanner()
 function registerSettings()
 {
 	register_setting('rcb_group', 'rcb_new_window');
+	register_setting('rcb_group', 'rcb_check_cookie');
 	register_setting('rcb_group', 'rcb_text');
 	register_setting('rcb_group', 'rcb_accept_text');
 	register_setting('rcb_group', 'rcb_more_info_text');
@@ -167,6 +191,12 @@ function adminPage()
 				<?php checked('1', get_option('rcb_new_window')); ?> />
 			</div>
 
+			<div id="check_cookie" style="margin-top:10px;">
+				<label for="rcb_check_cookie">Remove all cookies until the user clicks 'accept'?</label>
+				<input name="rcb_check_cookie" id="rcb_check_cookie" type="checkbox" 
+				<?php checked('on', get_option('rcb_check_cookie', 0)); ?> />
+			</div>
+
 			<div id="submit">
 				<?php submit_button(); ?>
 			</div>
@@ -177,7 +207,7 @@ function adminPage()
 }
 
 /**
- * Add a settings link on the plugin page
+ * Insert a settings link on the plugin page
  *
  */
 
@@ -189,11 +219,6 @@ function your_plugin_settings_link($links) {
 
 $plugin = plugin_basename(__FILE__); 
 add_filter("plugin_action_links_$plugin", 'your_plugin_settings_link' );
-
-/**
- * Remove the banner and all options
- *
- */
 
 /**
  * Remove the banner and all options
@@ -214,6 +239,8 @@ add_action('wp_footer', 'insertBanner');
 
 add_action('admin_menu', 'cookieMenu');
 add_action('admin_init', 'registerSettings');
+
+add_action('send_headers', 'checkCookie');
 
 register_uninstall_hook(__FILE__, 'remove');
 

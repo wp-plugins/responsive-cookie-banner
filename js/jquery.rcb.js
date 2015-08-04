@@ -1,6 +1,8 @@
 jQuery(function()
 {
 
+jQuery('#cookie-banner').hide();
+
 /**
  * Sets a cookie called rcb_cookie that lasts 100 days 
  */

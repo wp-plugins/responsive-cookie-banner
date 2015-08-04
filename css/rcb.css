@@ -16,7 +16,6 @@
   width: 100%;
   background-color: #F7F7F7;
   position: relative;
-  display: none;
   font-family: 'Open Sans';
   font-weight: 600;
   font-size: 15px;
@@ -25,7 +24,7 @@
   box-sizing: content-box;
   line-height: 1;
   letter-spacing: 0;
-  z-index: 9999999;
+  z-index: 1000;
 }
 #cookie-banner #cookie-banner-container {
   width: 1000px;
