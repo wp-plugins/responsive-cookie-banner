@@ -2,11 +2,11 @@
 
 /*
 * Plugin Name: Responsive Cookie Banner
-* Version: 1.3
+* Version: 1.4
 * Author: Lewis Gray
 * Author email: lewisgray200 at gmail dot com
 * License: GPL2
-* Description: A simple, stylish, functional and fully responsive EU cookie banner plugin that will display a message asking if the viewer would like to accept cookies. All text and the 'more info' link destination can be changed in the settings menu. Also includes an option to remove cookies until the banner is accepted. Compatible with all devices, languages and browsers.
+* Description: A simple, stylish, functional and fully responsive EU cookie banner plugin that displays a message asking if the viewer would like to accept cookies. All text and the 'more info' link can be changed in the settings menu. Also includes an option to remove cookies until the banner is accepted. Compatible with all devices, languages and browsers.
 */
 
 /**
@@ -33,7 +33,6 @@ function checkCookie()
 {
 	if(get_option('rcb_check_cookie') && !isset($_COOKIE['rcb_cookie']) && !is_user_logged_in())
 	{	
-		echo 'lemon';
 		$cookies = $_COOKIE;
 		$cookiePaths = array('', '/');
 

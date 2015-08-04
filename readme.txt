@@ -41,7 +41,7 @@ Simple, stylish, functional and fully responsive. Also includes an option to rem
 <li><strong>Version 1.1</strong> - Making the banner relative position not absolute.</li>
 <li><strong>Version 1.2</strong> - Making all text updatable so it can easily be used with different languages.</li>
 <li><strong>Version 1.3</strong> - Refactoring the code and Using LESS for the styling.</li>
-<li><strong>Version 1.4</strong> - </li>
+<li><strong>Version 1.4</strong> - Added an option to remove cookies until the banner is accepted.</li>
 </ul>
 
 == Upgrade Notice ==
