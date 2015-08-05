@@ -24,8 +24,7 @@ function loadResources()
 }
 
 /**
- * Check if rcb_cookie is not set. If it's not delete all cookies and return false.
- * Otherwise allow cookies and return true. 
+ * Remove cookies if rcb_check_cookie is set, rcb_cookie is not set and the user is not logged in.
  *
  */
 
@@ -210,14 +209,14 @@ function adminPage()
  *
  */
 
-function your_plugin_settings_link($links) { 
+function rcbSettingsLink($links) { 
   $settings_link = '<a href="options-general.php?page=responsive-cookie-banner%2Frcb.php">Settings</a>'; 
   array_unshift($links, $settings_link); 
   return $links; 
 }
 
-$plugin = plugin_basename(__FILE__); 
-add_filter("plugin_action_links_$plugin", 'your_plugin_settings_link' );
+$rcbPlugin = plugin_basename(__FILE__); 
+add_filter("plugin_action_links_$rcbPlugin", 'rcbSettingsLink' );
 
 /**
  * Remove the banner and all options

@@ -31,6 +31,8 @@ Simple, stylish, functional and fully responsive. Also includes an option to rem
 
 == Frequently Asked Questions ==
 
+There are no FAQ's.
+
 == Screenshots ==
 
 1. Desktop
