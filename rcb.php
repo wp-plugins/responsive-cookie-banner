@@ -2,9 +2,11 @@
 
 /*
 * Plugin Name: Responsive Cookie Banner
+* Plugin URI: http://lumen.ink
 * Version: 1.4
 * Author: Lewis Gray
 * Author email: lewisgray200 at gmail dot com
+* Author URI: http://lumen.ink
 * License: GPL2
 * Description: A simple, stylish, functional and fully responsive EU cookie banner plugin that displays a message asking if the viewer would like to accept cookies. All text and the 'more info' link can be changed in the settings menu. Also includes an option to remove cookies until the banner is accepted. Compatible with all devices, languages and browsers.
 */
