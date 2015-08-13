@@ -2,7 +2,7 @@
 Contributors: Lewis Gray
 Tags: responsive cookie banner, cookie banner, cookie law, cookie notice, EU cookie law
 Requires at least: 2.1
-Tested up to: 4.2.3
+Tested up to: 4.2.4
 Stable tag: 4.3
 License: GPL2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
